@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/producer-rabbitmq/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/producer-rabbitmq/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/producer-rabbitmq",
+  "projects": {
+    "producer-rabbitmq": {
+      "type": "application",
+      "root": "apps/producer-rabbitmq",
+      "entryFile": "main",
+      "sourceRoot": "apps/producer-rabbitmq/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/producer-rabbitmq/tsconfig.app.json"
+      }
+    },
+    "consumer-rabbitmq": {
+      "type": "application",
+      "root": "apps/consumer-rabbitmq",
+      "entryFile": "main",
+      "sourceRoot": "apps/consumer-rabbitmq/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/consumer-rabbitmq/tsconfig.app.json"
+      }
+    }
+  }
+}
